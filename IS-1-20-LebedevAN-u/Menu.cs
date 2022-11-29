@@ -22,5 +22,11 @@ namespace IS_1_20_LebedevAN_u
             Task1 task1 = new Task1();
             task1.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Task2 task1 = new Task2();
+            task1.ShowDialog();
+        }
     }
 }
