@@ -18,5 +18,20 @@ namespace IS_1_20_LebedevAN_u
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Menu());
         }
+
+    }
+    public class Connection
+    {
+        public string host = "10.90.12.110";
+        //public string host = "chuc.caseum.ru";
+        public string port = "33333";
+        public string user = "st_1_20_19";
+        public string data = "is_1_20_st19_KURS";
+        public string passwprd = "14313537";
+        public string connStr;
+        public string con()
+        {
+            return connStr = $"server={host};port={port};user={user};database={data};password={passwprd};";
+        }
     }
 }

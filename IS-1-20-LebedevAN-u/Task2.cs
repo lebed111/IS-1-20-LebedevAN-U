@@ -21,23 +21,18 @@ namespace IS_1_20_LebedevAN_u
         BDMysql mysql;
         class BDMysql
         {
-            string Host;
-            string Port;
-            string User;
-            string BD;
-            string Password;
+            string Host = "chuc.caseum.ru";
+            //string Host = "10.90.12.110";
+            string Port = "33333";
+            string User = "uchebka";
+            string BD = "uchebka";
+            string Password = "uchebka";
             public string connStr;
-            public BDMysql(string a, string s, string d, string w, string e)
-            {
-                Host = a;
-                Port = s;
-                User = d;
-                BD = w;
-                Password = e;
-            }
+
             public string Conect()
             {
-               return connStr = $"server={Host};port={Port};user={User};database={BD};password={Password};";               
+               return connStr = $"server={Host};port" +
+                    $"={Port};user={User};database={BD};password={Password};";               
             }
         }
 
@@ -45,7 +40,7 @@ namespace IS_1_20_LebedevAN_u
         {
             try
             {
-                mysql = new BDMysql(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
+                mysql = new BDMysql();
                 mysql.Conect();
                 conn = new MySqlConnection(mysql.connStr);
                 conn.Open();

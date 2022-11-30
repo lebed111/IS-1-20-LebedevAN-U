@@ -19,14 +19,20 @@ namespace IS_1_20_LebedevAN_u
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Task1 task1 = new Task1();
-            task1.ShowDialog();
+            Task1 task = new Task1();
+            task.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Task2 task1 = new Task2();
-            task1.ShowDialog();
+            Task2 task = new Task2();
+            task.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Task3 task = new Task3();
+            task.ShowDialog();
         }
     }
 }

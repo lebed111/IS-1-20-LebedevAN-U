@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,49 +13,44 @@ namespace IS_1_20_LebedevAN_u
 {
     public partial class Task1 : Form
     {
-        //Я надеюсь что тут можно было использовать делегаты
         public Task1()
         {
             InitializeComponent();
             
-        }
-        public delegate void aaaa(string mes);
-        public void listbox(string mes) =>  listBox1.Items.Add(mes);      
+        }   
         HDD hdd;
         Videocard vid;
         abstract class  Accessories
         {
-            public aaaa Helpaa;
             public int price;
             public string age;
-            public Accessories(int a, string c)
+            public string Articyl;// для чего оно нужно черт возьми
+            public Accessories(int a, string c, string d)
             {
                 price = a;
-                age = c;               
+                age = c;
+                Articyl = d;
             }
             public void Display()
             {
             }
-            public void RegisterHandler(aaaa del)
-            {
-                Helpaa = del;
-            }
+
         }
         class HDD : Accessories
         {
             int Revolutions { set; get; }
             string Interface { set; get; }
             int Volume { set; get; }
-            public HDD(int a, string c, int rev, string i, int vol):base (a,c)
+            public HDD(int a, string c, int rev, string i, int vol, string d):base (a,c,d)
             {
                 Revolutions = rev;
                 Interface = i;
                 Volume = vol;
             }
 
-          public new void Display()
+          public new string Display()
           {
-                Helpaa?.Invoke($"Цена {price},Год создания {age},Количество оборотов {Revolutions},Интерфейс {Interface},Объем памяти {Volume}");
+               return ($"Цена {price},Год создания {age},Количество оборотов {Revolutions},Интерфейс {Interface},Объем памяти {Volume}, Артикуул {Articyl}");
            }
         }
         class Videocard : Accessories
@@ -62,15 +58,15 @@ namespace IS_1_20_LebedevAN_u
             int CPU { set; get; }
             int Manufacturer { set; get; }
             int Memory { set; get; }
-            public Videocard(int a , string c , int cpu , int man , int mem ) : base(a , c)
+            public Videocard(int a , string c , int cpu , int man , int mem, string d ) : base(a , c, d)
             {
                 CPU = cpu;
                 Manufacturer = man;
                 Memory = mem; 
             }
-            public new void Display()
+            public new string Display()
             {
-                Helpaa?.Invoke($"Цена {price},Год создания {age},ЧастотаCPU {CPU},Производительность {Manufacturer},Обем памяти {Memory}");
+                return ($"Цена {price},Год создания {age},ЧастотаCPU {CPU},Производительность {Manufacturer},Обем памяти {Memory}, Артикул {Articyl}");
             }
         }
 
@@ -83,9 +79,8 @@ namespace IS_1_20_LebedevAN_u
         {
             try
             {
-                hdd = new HDD(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox3.Text), textBox4.Text, Convert.ToInt32(textBox5.Text));
-                hdd.RegisterHandler(listbox);
-                hdd.Display();
+                hdd = new HDD(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox3.Text), textBox4.Text, Convert.ToInt32(textBox5.Text), textBox9.Text);
+                listBox1.Items.Add(hdd.Display());
             }
             catch
             {
@@ -102,9 +97,8 @@ namespace IS_1_20_LebedevAN_u
         {
             try
             {
-                vid = new Videocard(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox6.Text), Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text));
-                vid.RegisterHandler(listbox);
-                vid.Display();
+                vid = new Videocard(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox6.Text), Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text), textBox9.Text);
+                listBox1.Items.Add(vid.Display());
             }
             catch
             {
