@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IS_1_20_LebedevAN_u
+namespace Task1
 {
     static class Program
     {
@@ -16,9 +16,7 @@ namespace IS_1_20_LebedevAN_u
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new Form());
         }
-
     }
-
 }

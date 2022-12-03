@@ -21,7 +21,7 @@ namespace IS_1_20_LebedevAN_u
         BDMysql mysql;
         class BDMysql
         {
-            string Host = "chuc.caseum.ru";
+            string Host = "chuc.caseum.ru"; // тут два поля так как я это ещё тестил в чюки
             //string Host = "10.90.12.110";
             string Port = "33333";
             string User = "uchebka";
@@ -29,7 +29,7 @@ namespace IS_1_20_LebedevAN_u
             string Password = "uchebka";
             public string connStr;
 
-            public string Conect()
+            public string Conect() //возвращение строки подключения через return
             {
                return connStr = $"server={Host};port" +
                     $"={Port};user={User};database={BD};password={Password};";               
@@ -38,7 +38,7 @@ namespace IS_1_20_LebedevAN_u
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            try//само подключение вне класса
             {
                 mysql = new BDMysql();
                 mysql.Conect();

@@ -20,7 +20,7 @@ namespace IS_1_20_LebedevAN_u
         }   
         HDD<int> hdd;
         Videocard<string> vid;
-        abstract class  Accessories <T>
+        abstract class  Accessories <T>//добавлен класс комплектуюшие
         {
             public int price;
             public string age;
@@ -36,7 +36,7 @@ namespace IS_1_20_LebedevAN_u
             }
 
         }
-        class HDD<T> : Accessories<T>
+        class HDD<T> : Accessories<T>// добавлен класс жеский диск
         {
             int Revolutions { set; get; }
             string Interface { set; get; }
@@ -48,12 +48,12 @@ namespace IS_1_20_LebedevAN_u
                 Volume = vol;
             }
 
-          public new string Display()
-          {
+          public new string Display()//вывод информации
+            {
                return ($"Цена {price},Год создания {age},Количество оборотов {Revolutions},Интерфейс {Interface},Объем памяти {Volume}, Артикуул {Articyl}");
            }
         }
-        class Videocard<T> : Accessories<T>
+        class Videocard<T> : Accessories<T>// добавлен класс видеокарта
         {
             int CPU { set; get; }
             int Manufacturer { set; get; }
@@ -64,7 +64,7 @@ namespace IS_1_20_LebedevAN_u
                 Manufacturer = man;
                 Memory = mem; 
             }
-            public new string Display()
+            public new string Display()//вывод информации
             {
                 return ($"Цена {price},Год создания {age},ЧастотаCPU {CPU},Производительность {Manufacturer},Обем памяти {Memory}, Артикул {Articyl}");
             }
@@ -78,7 +78,7 @@ namespace IS_1_20_LebedevAN_u
         private void button2_Click(object sender, EventArgs e)
         {
             try
-            {
+            {   //инцилизация жеского диска
                 hdd = new HDD<int>(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox3.Text), textBox4.Text, Convert.ToInt32(textBox5.Text),Convert.ToInt32(textBox9.Text));
                 listBox1.Items.Add(hdd.Display());
             }
@@ -96,7 +96,7 @@ namespace IS_1_20_LebedevAN_u
         private void button3_Click(object sender, EventArgs e)
         {
             try
-            {
+            {   // инцилизация видеокарты 
                 vid = new Videocard<string>(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox6.Text), Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text), textBox9.Text);
                 listBox1.Items.Add(vid.Display());
             }
