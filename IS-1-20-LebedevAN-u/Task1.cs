@@ -18,14 +18,14 @@ namespace IS_1_20_LebedevAN_u
             InitializeComponent();
             
         }   
-        HDD hdd;
-        Videocard vid;
-        abstract class  Accessories
+        HDD<int> hdd;
+        Videocard<string> vid;
+        abstract class  Accessories <T>
         {
             public int price;
             public string age;
-            public string Articyl;// для чего оно нужно черт возьми
-            public Accessories(int a, string c, string d)
+            public T Articyl;// для чего оно нужно черт возьми
+            public Accessories(int a, string c, T d)
             {
                 price = a;
                 age = c;
@@ -36,12 +36,12 @@ namespace IS_1_20_LebedevAN_u
             }
 
         }
-        class HDD : Accessories
+        class HDD<T> : Accessories<T>
         {
             int Revolutions { set; get; }
             string Interface { set; get; }
             int Volume { set; get; }
-            public HDD(int a, string c, int rev, string i, int vol, string d):base (a,c,d)
+            public HDD(int a, string c, int rev, string i, int vol, T d):base (a,c,d)
             {
                 Revolutions = rev;
                 Interface = i;
@@ -53,12 +53,12 @@ namespace IS_1_20_LebedevAN_u
                return ($"Цена {price},Год создания {age},Количество оборотов {Revolutions},Интерфейс {Interface},Объем памяти {Volume}, Артикуул {Articyl}");
            }
         }
-        class Videocard : Accessories
+        class Videocard<T> : Accessories<T>
         {
             int CPU { set; get; }
             int Manufacturer { set; get; }
             int Memory { set; get; }
-            public Videocard(int a , string c , int cpu , int man , int mem, string d ) : base(a , c, d)
+            public Videocard(int a , string c , int cpu , int man , int mem, T d ) : base(a , c, d)
             {
                 CPU = cpu;
                 Manufacturer = man;
@@ -79,7 +79,7 @@ namespace IS_1_20_LebedevAN_u
         {
             try
             {
-                hdd = new HDD(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox3.Text), textBox4.Text, Convert.ToInt32(textBox5.Text), textBox9.Text);
+                hdd = new HDD<int>(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox3.Text), textBox4.Text, Convert.ToInt32(textBox5.Text),Convert.ToInt32(textBox9.Text));
                 listBox1.Items.Add(hdd.Display());
             }
             catch
@@ -97,7 +97,7 @@ namespace IS_1_20_LebedevAN_u
         {
             try
             {
-                vid = new Videocard(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox6.Text), Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text), textBox9.Text);
+                vid = new Videocard<string>(Convert.ToInt32(textBox1.Text), textBox2.Text, Convert.ToInt32(textBox6.Text), Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text), textBox9.Text);
                 listBox1.Items.Add(vid.Display());
             }
             catch

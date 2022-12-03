@@ -37,9 +37,9 @@ namespace IS_1_20_LebedevAN_u
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(211, 164);
+            this.dataGridView1.Location = new System.Drawing.Point(102, 164);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(418, 113);
+            this.dataGridView1.Size = new System.Drawing.Size(527, 113);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
