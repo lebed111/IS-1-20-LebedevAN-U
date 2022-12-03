@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1E261D7-564F-4FF4-95F8-69F2F4011951}</ProjectGuid>
+    <ProjectGuid>{F8AFDC99-5D3B-41CC-A015-5EEA8FE42AE0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>IS_1_20_LebedevAN_u</RootNamespace>
-    <AssemblyName>IS-1-20-LebedevAN-u</AssemblyName>
+    <RootNamespace>Task4</RootNamespace>
+    <AssemblyName>Task4</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -84,17 +84,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu.cs">
+    <Compile Include="Task4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="Task4.Designer.cs">
+      <DependentUpon>Task4.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -104,6 +101,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Task4.resx">
+      <DependentUpon>Task4.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,21 +119,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task1\Task1.csproj">
-      <Project>{0f1c35c1-e15d-4706-b7ee-6a6a7bd902b3}</Project>
-      <Name>Task1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Task2\Task2.csproj">
-      <Project>{674e3543-14fa-4f36-86d1-1a26d5f23e49}</Project>
-      <Name>Task2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Task3\Task3.csproj">
-      <Project>{5cca2e63-4245-4f4e-bd99-6119e8e1d720}</Project>
-      <Name>Task3</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Task4\Task4.csproj">
-      <Project>{f8afdc99-5d3b-41cc-a015-5eea8fe42ae0}</Project>
-      <Name>Task4</Name>
+    <ProjectReference Include="..\biblia_Task4\biblia_Task4.csproj">
+      <Project>{df17ade6-aeb1-425a-b648-afc3a889a152}</Project>
+      <Name>biblia_Task4</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

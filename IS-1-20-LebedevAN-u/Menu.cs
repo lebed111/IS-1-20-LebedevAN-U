@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Task4;
 
 namespace IS_1_20_LebedevAN_u
 {
@@ -32,6 +33,17 @@ namespace IS_1_20_LebedevAN_u
         private void button3_Click(object sender, EventArgs e)
         {
             Task3 task = new Task3();
+            task.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Task4.Task4 task = new Task4.Task4();
             task.ShowDialog();
         }
     }
