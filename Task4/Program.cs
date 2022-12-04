@@ -18,5 +18,6 @@ namespace Task4
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Task4());
         }
+
     }
 }
