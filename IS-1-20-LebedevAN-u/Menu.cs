@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Task4;
-
+using Task5;
+// сдесь нет остальных Task, так как при разделении их на проекты, я перенес их так что не надо было их указывать(магия)
 namespace IS_1_20_LebedevAN_u
 {
     public partial class Menu : Form
@@ -17,7 +18,7 @@ namespace IS_1_20_LebedevAN_u
         {
             InitializeComponent();
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             Task1 task = new Task1();
@@ -43,7 +44,15 @@ namespace IS_1_20_LebedevAN_u
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Task4.Task4 task = new Task4.Task4();
+            // а этот вообще не хочет использоваться в пространстве именн
+           Task4.Task4 task = new Task4.Task4();
+            task.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // забыл переменовать в Task5, а делать это щас лень
+            Form1 task = new Form1();
             task.ShowDialog();
         }
     }

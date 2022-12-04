@@ -39,7 +39,7 @@ namespace Task4
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 266);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 207);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(425, 125);
             this.dataGridView1.TabIndex = 0;
@@ -47,17 +47,17 @@ namespace Task4
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(30, 214);
+            this.button1.Location = new System.Drawing.Point(30, 171);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 30);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "Загрузить БД";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(149, 71);
+            this.pictureBox1.Location = new System.Drawing.Point(158, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(306, 189);
             this.pictureBox1.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace Task4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 430);
+            this.ClientSize = new System.Drawing.Size(467, 354);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);

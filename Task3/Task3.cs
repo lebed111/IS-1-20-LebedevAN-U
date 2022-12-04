@@ -15,10 +15,15 @@ namespace IS_1_20_LebedevAN_u
     public partial class Task3 : Form
     {
         Connection f2 =  new Connection();// Обявления класс из Program сашок ума мешок
-        MySqlConnection conn;
+        MySqlConnection conn; // обявляем переменную conn
         private BindingSource bSource = new BindingSource();
-        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
-        DataTable table = new DataTable();
+        //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных.
+        private MySqlDataAdapter MyDA = new MySqlDataAdapter(); 
+        //DataSet - расположенное в оперативной памяти представление данных, обеспечивающее согласованную реляционную программную 
+        //модель независимо от источника данных.DataSet представляет полный набор данных, включая таблицы, содержащие, упорядочивающие 
+        //и ограничивающие данные, а также связи между таблицами.
+        // как вы и писали :)
+        DataTable table = new DataTable();// создание таблици или же БД в С# 
         public Task3()
         {
             InitializeComponent();
@@ -37,13 +42,13 @@ namespace IS_1_20_LebedevAN_u
         {
             //Создание таблицы
             conn.Open();
-            table.Clear();
-            table.Columns.Clear();
+            table.Clear();// удаление всех данных
+            table.Columns.Clear();// удаление всех столбцов
             string coooom = "SELECT Orders.id_Or,Client.id_cl,Orders.id_cl,Orders.id_ta,Orders.date_or FROM Orders INNER JOIN Client ON Client.id_cl = Orders.id_cl ORDER BY Client.id_cl; ";// это команда с INNER JOIN 
-            MyDA.SelectCommand = new MySqlCommand(coooom,conn);
-            dataGridView1.DataSource = bSource;
-            bSource.DataSource = table;
-            MyDA.Fill(table);
+            MyDA.SelectCommand = new MySqlCommand(coooom,conn);// добовляем комманду 
+            dataGridView1.DataSource = bSource;//к гриду присваваем bSource
+            bSource.DataSource = table;// к bSource присваеваем table
+            MyDA.Fill(table);//выводим в гриде таблицу
 
             dataGridView1.Columns[2].Visible = false;
 

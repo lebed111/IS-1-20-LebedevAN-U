@@ -36,6 +36,7 @@ namespace IS_1_20_LebedevAN_u
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -81,7 +82,7 @@ namespace IS_1_20_LebedevAN_u
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(551, 119);
+            this.label2.Location = new System.Drawing.Point(589, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 13);
             this.label2.TabIndex = 4;
@@ -91,7 +92,7 @@ namespace IS_1_20_LebedevAN_u
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(551, 132);
+            this.label3.Location = new System.Drawing.Point(589, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 5;
@@ -107,11 +108,22 @@ namespace IS_1_20_LebedevAN_u
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(560, 57);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(126, 50);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Задание 5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 154);
+            this.ClientSize = new System.Drawing.Size(703, 154);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -135,6 +147,7 @@ namespace IS_1_20_LebedevAN_u
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
